@@ -18,7 +18,6 @@ app.post('/reviews/add_review', async (req, res) => {
     try {
         const review = new Review(req.body);
         const savedReview = await review.save();
-        //console.log(`Added new item ${review}`);
         res.status(201).json(savedReview);
     } catch (error) {
         res.status(400).json({ error: error.message });
